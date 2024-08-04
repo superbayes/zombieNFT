@@ -45,11 +45,14 @@ contract ZombieFactory is Ownable {
         return uint256(keccak256(abi.encodePacked(_str, now))) % dnaModulus;
     }
 
-    function createZombie(string memory _name) public {
-        require(ownerZombieCount[msg.sender] == 0);
-        uint256 randDna = _generateRandomDna(_name);
-        randDna = randDna - (randDna % 10);
-        _createZombie(_name, randDna);
+    function createZombie(string memory _name) public payable {
+        if (ownerZombieCount[msg.sender] == 0) {
+            uint256 randDna = _generateRandomDna(_name);
+            randDna = randDna - (randDna % 10);
+            _createZombie(_name, randDna);
+        } else {
+            buyZombie(_name);
+        }
     }
 
     function buyZombie(string memory _name) public payable {
