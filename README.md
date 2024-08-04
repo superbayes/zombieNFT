@@ -3,7 +3,7 @@ zombieNFT project
 
 ## 这是一个基于ERC721的游戏项目
 
-[imag](https://github.com/superbayes/zombieNFT/blob/main/contractsV1/project_uml.jpg)
+[imag](https://github.com/superbayes/zombieNFT/blob/main/contractsV1/project_uml2.jpg)
 
 * 用户通过**ZombieFactory**可以免费创建一个属于自己的僵尸
 
